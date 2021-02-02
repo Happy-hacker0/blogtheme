@@ -47,6 +47,7 @@ function buildToolbar() {
 
     const $toolbar = $('.esa-toolbar');
     const $skinPopup = $('.skin-popup');
+    var skinPopEl = document.getElementsByClassName('skin-popup')[0];
 
     let show = false;
     $toolbar.find('.bars').click(function () {
@@ -85,7 +86,7 @@ function buildToolbar() {
         $skinPopup.slideToggle();
     });
 
-   skinPopEl.addEventListener('click', function(ev) {
+    skinPopEl.addEventListener('click', function(ev) {
         ev.stopPropagation()
         if (ev.target.nodeName === 'BUTTON') {
             console.log(ev);
@@ -100,6 +101,7 @@ function buildToolbar() {
             skinPopEl.style.display = 'none';
         }
     })
+
     let showcontents = false;
     $toolbar.find('.contents').click(() => {
         $('.esa-contents').toggleClass(function () {
